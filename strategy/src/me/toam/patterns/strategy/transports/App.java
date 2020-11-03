@@ -9,13 +9,13 @@ package me.toam.patterns.strategy.transports;
 public class App {
     public static void main(String[] args) {
         Context context = new Context();
-        Strategy strategy1 = context.execute(new Condition(3));
-        System.out.println(strategy1.getTransport());
+        context.setStrategy( new StrategyA());
+        System.out.println(context.execute());
 
-        Strategy strategy2 = context.execute(new Condition(7));
-        System.out.println(strategy2.getTransport());
+        context.setStrategy( new StrategyB());
+        System.out.println(context.execute());
 
-        Strategy strategy3 = context.execute(new Condition(11));
-        System.out.println(strategy3.getTransport());
+        context.setStrategy( new StrategyC());
+        System.out.println(context.execute());
     }
 }

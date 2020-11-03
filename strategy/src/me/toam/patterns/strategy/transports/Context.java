@@ -7,14 +7,12 @@ package me.toam.patterns.strategy.transports;
  */
 
 public class Context {
+    Strategy strategy;
 
-    public Strategy execute(Condition condition) {
-        if (condition.budget > 10) {
-            return new StrategyC();
-        }
-        if (condition.budget < 5) {
-            return new StrategyA();
-        }
-        else return new StrategyB();
+    public void setStrategy(Strategy strategy) {
+        this.strategy = strategy;
+    }
+    public String execute() {
+        return strategy.getTransport();
     }
 }
